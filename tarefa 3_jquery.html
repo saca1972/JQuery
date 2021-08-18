@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarefa 3</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        div {
+          width: 100px;
+          height: 100px;
+          float: left;
+          margin: 10px;
+          background: rgb(0, 255, 136);
+          cursor: pointer;
+        }
+        .prim {
+          background: blue;
+          height: 150px;
+          
+        }
+        </style>
+</head>
+<body>
+<div class="prim">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                  Tenetur odit quasi fugit deserunt nulla corporis animi
+                 </div>
+<div class="second">teste</div>
+<div>teste</div>
+<div>teste</div>
+<button id="teste">altura</button>
+ 
+<script>
+//1.   
+//var modWidth = 500;
+//$('div').click(function() {
+//$('div').width(modWidth);
+//});
+//var modHeight = 500;
+//$("div").click(function() {
+//$('div').height(modHeight);
+// });
+
+//2.
+
+//$('#teste').click(function() {
+//$('.prim').height();
+//alert($('.prim').height());
+//});
+
+//3.
+
+$('#teste').click(function() {
+$('.second').innerHeight ();
+alert($('.second').innerHeight ());
+});
+
+
+</script>
+</body>
+</html>
