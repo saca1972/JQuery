@@ -1,62 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tarefa 3</title>
     <script src="js/jquery-3.6.0.min.js"></script>
     <style>
-        div {
-          width: 100px;
-          height: 100px;
-          float: left;
-          margin: 10px;
-          background: rgb(0, 255, 136);
-          cursor: pointer;
+      div {
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin: 10px;
+        background: rgb(0, 255, 136);
+        cursor: pointer;
+      }
+      .prim {
+        background: blue;
+        height: 150px;
+      }
+      #menu-horizontal ul li {
+        display: inline-flex;
+        padding: 10px;
+        background-color: #f09090;
+      }
+      .caixa{
+        overflow:auto;
+        height: 300px;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="menu-horizontal">
+      <ul>
+        <li><a href="#">Botão 1</a></li>
+        <li><a href="#">Botão 2</a></li>
+        <li><a href="#">Botão 3</a></li>
+        <li><a href="#">Botão 4</a></li>
+      </ul>
+    </nav>
+
+    <section class="caixa">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident laboriosam suscipit fugiat natus illum numquam vitae veniam, id dolorem assumenda eveniet quo, non perferendis nesciunt itaque obcaecati repellendus tenetur magni saepe! Ullam iusto esse dolore tempore officia earum quam inventore unde veniam, quos odio itaque nisi? Quibusdam ipsum pariatur culpa expedita veniam ipsa neque assumenda esse, ab, nemo cupiditate eos, quis reiciendis. Veritatis, dolor earum magni eos repellat vitae velit vel maiores ullam molestiae est illo aperiam! Maxime blanditiis accusantium animi atque obcaecati rerum perferendis quam nisi, numquam pariatur aspernatur, aut at aliquid quibusdam doloremque sit amet nulla illum consequatur.
+    </section>
+
+    <div class="prim">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur odit
+      quasi fugit deserunt nulla corporis animi
+    </div>
+    <div class="second">teste</div>
+    <div>teste</div>
+    <div>teste</div>
+    <button id="teste">altura</button>
+    <button id="teste2">Criar paragrafo</button>
+    <button id="teste3">posição</button>
+    <button id="teste4">offset</button>
+    <button id="teste5">caixa</button>
+
+
+    <script>
+      window.addEventListener("resize", function () {
+        var tam = $(window).width();
+        if (tam >= 1040) {
+          $("#menu-horizontal").show();
+        } else {
+          $("#menu-horizontal").hide();
         }
-        .prim {
-          background: blue;
-          height: 150px;
-          
-        }
-        </style>
-</head>
-<body>
-<div class="prim">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                  Tenetur odit quasi fugit deserunt nulla corporis animi
-                 </div>
-<div class="second">teste</div>
-<div>teste</div>
-<div>teste</div>
-<button id="teste">altura</button>
- 
-<script>
-//1.   
-//var modWidth = 500;
-//$('div').click(function() {
-//$('div').width(modWidth);
-//});
-//var modHeight = 500;
-//$("div").click(function() {
-//$('div').height(modHeight);
-// });
+      });
 
-//2.
+      $("#teste2").click(function(){
+            $("#menu-horizontal").append("<p>novo paragrafo</p>");
+        });
+      $("#teste3").click(function () {
+        var x = $("p").position();
+        alert("Top: " + x.top + " Left: " + x.left);
+      });
+      $("#teste4").click(function () {
+        var x = $("p").offset();
+        alert("Top: " + x.top + " Left: " + x.left);
+      });
+      $("#teste5").click(function (){
+      var valor = $('.caixa').scrollTop();
+      alert(valor);
+      });
 
-//$('#teste').click(function() {
-//$('.prim').height();
-//alert($('.prim').height());
-//});
+     
 
-//3.
+      //1.
+      //var modWidth = 500;
+      //$('section').click(function() {
+      //$('div').width(modWidth);
+      //});
+      //var modHeight = 500;
+      //$("div").click(function() {
+      //$('div').height(modHeight);
+      // });
 
-$('#teste').click(function() {
-$('.second').innerHeight ();
-alert($('.second').innerHeight ());
-});
+      //2.
 
+      //$('#teste').click(function() {
+      //$('.prim').height();
+      //alert($('.prim').height());
+      //});
 
-</script>
-</body>
+      //3.
+
+      $("#teste").click(function () {
+        $(".second").innerHeight();
+        alert($(".second").innerHeight());
+      });
+    </script>
+  </body>
 </html>
